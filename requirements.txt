@@ -1,0 +1,154 @@
+# Rules of the Game
+
+Here are suggestions for the rules for the MVP/Hackathon for Metamodel 2.0.
+All values in italic are just an example and should be substitutable with any other similar value.
+*Disclaimer: The rules and AC are only suggestions for implementing the core functionality. We used Victor as a suggested actor based on a random name lottery. Any coincidences with actual people or places are purely coincidental and are not to be taken into consideration.*
+
+## Adding Dimensions (branches)
+
+```
+Adding 1st level branch
+Given the model root exists
+When Victor adds the dimension "Renewables" to the root
+Then "Renewables" is added to the root
+```
+
+```
+Adding a branch to a branch
+Given the "Renewables" dimension exists inside the model
+When Victor adds the dimension "Energy Storage System" to the "Renewables"
+Then the "Energy Storage System" is added
+```
+
+## Adding/Manipulating Fields (leaves)
+
+```
+Add a Simple Leaf to a branch
+
+Given the "Energy Storage System" dimension exists
+When Victor adds an "Average Unit Price" number field to it
+Then the field is added under "Energy Storage System" as a number field
+```
+
+```
+Add an Advanced Leaf to a branch
+
+Given the "Energy Storage System" dimension exists
+When Victor adds a "Storage Capacity" field as a scale with min, max and scales values added to it
+Then the field is added under "Energy Storage System" as a scale field
+And it has the associated constraints associated with it
+```
+
+```
+Leaf Ordering
+
+Given the "Energy Storage System" dimension with the field "Storage Capacity" exist
+When Victor adds a "Storage Model" text field after "Storage Capacity"
+Then the field is added under "Energy Storage System"
+And it appears after "Storage Capacity"
+```
+
+```
+Leaf can have Defaults
+
+Given the "Average Unit Price" field exists
+When Victor sets the default value of the field to 50
+Then the metadata model stores this information for further use
+```
+
+## Digital Twin (Entity) interaction with the meta model
+
+```
+Default rules applied
+
+Given a metadata model exists
+And a default rules are set for the fields
+When Victor creates a new entity with the model
+Then all the fields are filled according to the configuration set in the default rules
+```
+
+```
+Default rules are missing
+
+Given a metadata model exists
+And a field doesn't exist for a field
+When Victor creates a new entity with the model
+Then the field is filled in with NULL
+```
+
+```
+Get an entity
+
+Given we have a list of entities
+When Victor requests one of them
+Then he can get it within a reasonable time
+And the result contains all the associated leaves from the meta model
+```
+
+```
+Get a list of entities
+
+Given we have a list of entities
+When Victor requests a subset of them
+Then he can get them within a reasonable time
+And the result contains all the associated leaves from the meta model
+```
+
+```
+Soft Delete
+
+Given we have an attribute in a entity
+When Victor wants to delete this attribute
+Then the attribute is marked as deleted
+And the attribute stays in the database
+```
+
+```
+Soft deleted items are not shown
+
+Given an attribute of an entity is deleted
+When Victor requests the entity
+Then the field is not returned
+```
+
+## Validation and Error handling
+
+```
+Adding branch Fails
+
+Given a branch does not exists
+When Victor adds the dimension "Renewables" to that branch
+Then "Renewables" is not added to the branch and an error message is returned
+```
+
+```
+Adding leaf Fails
+
+Given a branch does not exists
+When Victor adds an "Average Unit Price" number field to it
+Then "Average Unit Price" is not added to the branch and an error message is returned
+```
+
+```
+Adding Leaf Defaults Fails
+
+Given the "Average Unit Price" field does not exists
+When Victor sets the default value of the field to 50
+Then the metadata model does not stores it and an error message is returned
+```
+
+```
+Adding Leaf Defaults Missing Data
+
+Given the "Average Unit Price" field does exists
+When Victor does not sets the default value when making a request
+Then the metadata model does not stores it and request validation error is returned
+```
+
+```
+Get an entity fails
+
+Given we have a list of entities
+When Victor tries to request one of them but provide non existing identifier 
+Then he gets a 404 missing entity response from the service
+```

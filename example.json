@@ -1,0 +1,374 @@
+[
+  {
+    "id": 1,
+    "name": "Processor",
+    "status": "Active",
+    "order": 1,
+    "systems": [],
+    "components": [
+      {
+        "name": "Cores",
+        "description": "Number of cores in the processor.",
+        "type": "Number",
+        "order": 1,
+        "status": "Active",
+        "attributes": {
+          "value": 4
+        }
+      },
+      {
+        "name": "Socket",
+        "description": "The socket type required by the processor for installation.",
+        "type": "String",
+        "order": 1,
+        "status": "Active",
+        "attributes": {
+          "value": "LGA"
+        }
+      },
+      {
+        "name": "Manufacturer",
+        "description": "The manufacturer of the processor.",
+        "type": "String",
+        "order": 1,
+        "status": "Active",
+        "attributes": {
+          "value": "Intel"
+        }
+      },
+      {
+        "name": "Threads",
+        "description": "Number of threads in the processor.",
+        "type": "Number",
+        "order": 4,
+        "status": "Active",
+        "attributes": {
+          "value": 8
+        }
+      },
+      {
+        "name": "Clock Speed",
+        "description": "The range of clock speeds for the processor.",
+        "type": "Range",
+        "order": 5,
+        "status": "Active",
+        "attributes": {
+          "min": 3.6,
+          "max": 4.2
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Memory",
+    "status": "Active",
+    "order": 2,
+    "systems": [
+      {
+        "id": 6,
+        "name": "RAM",
+        "status": "Active",
+        "order": 1,
+        "systems": [],
+        "components": [
+          {
+            "name": "Type",
+            "description": "The type of RAM memory.",
+            "type": "String",
+            "order": 1,
+            "status": "Active",
+            "attributes": {
+              "value": "DDR4"
+            }
+          },
+          {
+            "name": "Capacity",
+            "description": "The capacity of the RAM memory (GBs).",
+            "type": "Number",
+            "order": 2,
+            "status": "Active",
+            "attributes": {
+              "value": 8
+            }
+          },
+          {
+            "name": "Speed",
+            "description": "The range of speeds for the RAM memory (MHz).",
+            "type": "Range",
+            "order": 3,
+            "status": "Active",
+            "attributes": {
+              "min": 2400,
+              "max": 3200
+            }
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "ROM",
+        "status": "Active",
+        "order": 2,
+        "systems": [],
+        "components": []
+      }
+    ],
+    "components": []
+  },
+  {
+    "id": 3,
+    "name": "Storage",
+    "status": "Active",
+    "order": 3,
+    "systems": [
+      {
+        "id": 8,
+        "name": "HDD",
+        "status": "Active",
+        "order": 1,
+        "systems": [],
+        "components": [
+          {
+            "name": "Interface",
+            "description": "The interface type of the storage.",
+            "type": "String",
+            "order": 1,
+            "status": "Active",
+            "attributes": {
+              "value": "SATA"
+            }
+          },
+          {
+            "name": "Capacity",
+            "description": "The capacity of the storage (GBs).",
+            "type": "Number",
+            "order": 2,
+            "status": "Active",
+            "attributes": {
+              "value": 1000
+            }
+          },
+          {
+            "name": "Speed",
+            "description": "The range of speeds for the storage (RPM).",
+            "type": "Range",
+            "order": 3,
+            "status": "Active",
+            "attributes": {
+              "min": 5400,
+              "max": 7200
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "SSD",
+        "status": "Active",
+        "order": 2,
+        "systems": [],
+        "components": []
+      }
+    ],
+    "components": []
+  },
+  {
+    "id": 4,
+    "name": "Input/Output (IO)",
+    "status": "Active",
+    "order": 4,
+    "systems": [
+      {
+        "id": 11,
+        "name": "Keyboard",
+        "status": "Active",
+        "order": 1,
+        "systems": [],
+        "components": [
+          {
+            "name": "Interface",
+            "description": "The interface type of the keyboard.",
+            "type": "String",
+            "order": 1,
+            "status": "Active",
+            "attributes": {
+              "value": "USB"
+            }
+          },
+          {
+            "name": "Layout",
+            "description": "The layout of the keyboard.",
+            "type": "String",
+            "order": 2,
+            "status": "Active",
+            "attributes": {
+              "value": "QWERTY"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Mouse",
+        "status": "Active",
+        "order": 2,
+        "systems": [],
+        "components": [
+          {
+            "name": "Interface",
+            "description": "The interface type of the mouse.",
+            "type": "String",
+            "order": 1,
+            "status": "Active",
+            "attributes": {
+              "value": "USB"
+            }
+          },
+          {
+            "name": "Buttons",
+            "description": "The number of buttons on the mouse.",
+            "type": "Number",
+            "order": 2,
+            "status": "Active",
+            "attributes": {
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Monitor",
+        "status": "Active",
+        "order": 3,
+        "systems": [],
+        "components": [
+          {
+            "name": "Interface",
+            "description": "The interface type of the monitor.",
+            "type": "String",
+            "order": 1,
+            "status": "Active",
+            "attributes": {
+              "value": "HDMI"
+            }
+          },
+          {
+            "name": "Resolution",
+            "description": "The resolution of the monitor.",
+            "type": "String",
+            "order": 2,
+            "status": "Active",
+            "attributes": {
+              "value": "1920x1080"
+            }
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Printer",
+        "status": "Active",
+        "order": 4,
+        "systems": [],
+        "components": []
+      },
+      {
+        "id": 15,
+        "name": "Scanner",
+        "status": "Active",
+        "order": 5,
+        "systems": [],
+        "components": []
+      },
+      {
+        "id": 16,
+        "name": "Speakers",
+        "status": "Active",
+        "order": 6,
+        "systems": [],
+        "components": []
+      },
+      {
+        "id": 17,
+        "name": "Microphone",
+        "status": "Active",
+        "order": 7,
+        "systems": [],
+        "components": []
+      },
+      {
+        "id": 18,
+        "name": "Webcam",
+        "status": "Active",
+        "order": 8,
+        "systems": [],
+        "components": []
+      },
+      {
+        "id": 19,
+        "name": "Headphones",
+        "status": "Active",
+        "order": 9,
+        "systems": [],
+        "components": []
+      }
+    ],
+    "components": []
+  },
+  {
+    "id": 5,
+    "name": "Software",
+    "status": "Active",
+    "order": 5,
+    "systems": [
+      {
+        "id": 20,
+        "name": "Drivers",
+        "status": "Active",
+        "order": 1,
+        "systems": [],
+        "components": []
+      },
+      {
+        "id": 21,
+        "name": "OS",
+        "status": "Active",
+        "order": 2,
+        "systems": [],
+        "components": [
+          {
+            "name": "Name",
+            "description": "The name of the operating system.",
+            "type": "String",
+            "order": 1,
+            "status": "Active",
+            "attributes": {
+              "value": "Windows 10"
+            }
+          },
+          {
+            "name": "Version",
+            "description": "The version of the operating system.",
+            "type": "String",
+            "order": 2,
+            "status": "Active",
+            "attributes": {
+              "value": "10.0.19042"
+            }
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "name": "Applications",
+        "status": "Active",
+        "order": 3,
+        "systems": [],
+        "components": []
+      }
+    ],
+    "components": []
+  }
+]
